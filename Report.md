@@ -4,7 +4,6 @@
 
 FTo solve the environment in this project, I decided to implement the MADDPG algorithm. MADDG is a great choice for this environment due to the existence of multiple agents, and my approach here was inspired by the implementation used in the DRLND Nanodegree Lab for the physical deception environment.
 
-I also added a `DDPG_Tennis.ipynb` solution notebook using the DDPG algorithm I implemented in the previous project for this nanodegree. The reason DDPG works well in this environment, without any changes from what I had implemented for project 2, is that the two agents in the `Tennis` environment are trying to learn the same exact policy and have the same reward structure. In that sense, it is acceptable for the two agents to share a single DDPG instance to learn the best policy possible.
 
 ## Learning Algorithm
 
@@ -31,15 +30,11 @@ In MADDPG, each agent has its own actor local, actor target, critic local and cr
 
 ## Training and Results
 
-Training the DDPG solution was very simple. Only a few changes in the hyperparameters from Project 2 solved the environment for me:
 
-![DDPG Plot of Rewards](https://github.com/MarcioPorto/drlnd-collaboration-and-competition/blob/master/ddpg_tennis_training.png)
-
-As you can see above, the training was a little unstable, and the agent never achieved a rolling score above the 0.5 required to solve this environment. I believe I could have stabilized this result, but my main focus in this project was to implement the MADDPG algorithm so decided to move right on.
 
 I found training to be particularly challenging for my final MADDPG implementation. Initially, I had many small issues getting the full implementation to work as expected. After that was worked out, I found the training process to be very sensitive to the hyperparameters. It took a good amount of trial and error to finally get to something that trained well enough:
 
-![MADDPG Plot of Rewards](https://github.com/MarcioPorto/drlnd-collaboration-and-competition/blob/master/maddpg_tennis_training.png)
+![MADDPG Plot of Rewards](https://github.com/iAbhyuday/Collaboration-and-Competition-DRL/raw/master/plot.png)
 
 The results above show that the training process followed a stable pattern, and the 100-episode rolling max score never went significantly down after solving the environment.
 
